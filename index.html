@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moave | 따뜻하고 세련된 여성의류</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="css/초기화.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- 전체감싸는 박스 -->
+    <div id="wrap">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header_inner">
+                <!-- 좌측: 햄버거 메뉴 -->
+                <button type="button" class="icon_btn hamburger" id="menuOpen" aria-label="전체 메뉴 열기">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <!-- 가운데: 로고 -->
+                <h1 class="logo">
+                    <a href="#none" aria-label="Moave 홈">
+                        <img src="img/logo1.png" alt="Moave">
+                    </a>
+                </h1>
+
+                <!-- 우측: 장바구니 / 로그인 -->
+                <div class="header_util">
+                    <a href="#none" class="icon_btn cart" aria-label="장바구니">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1.2 12.2a1 1 0 0 1-1 .8H8.2a1 1 0 0 1-1-.8L6 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+                        <span class="cart_count" id="cartCount">0</span>
+                    </a>
+                    <a href="#none" class="login">LOGIN</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 사이드 메뉴 (햄버거) -->
+        <div class="drawer_dim" id="drawerDim"></div>
+        <nav class="drawer" id="drawer" aria-label="전체 메뉴">
+            <button type="button" class="icon_btn drawer_close" id="menuClose" aria-label="전체 메뉴 닫기">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <p class="drawer_title">MENU</p>
+            <ul class="drawer_list" id="drawerList"></ul>
+            <div class="drawer_util">
+                <a href="#none">LOGIN</a>
+                <a href="#none">JOIN</a>
+                <a href="#none">MY PAGE</a>
+            </div>
+        </nav>
+
+        <!-- 검색창 -->
+        <div class="search">
+            <form class="search_form" action="#none" onsubmit="return false;">
+                <input type="search" placeholder="찾고 싶은 아이템을 검색해 보세요" aria-label="상품 검색">
+                <button type="submit" aria-label="검색">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- 메뉴바 (sticky) -->
+        <nav class="gnb" aria-label="카테고리">
+            <ul id="gnbList"></ul>
+        </nav>
+
+        <main>
+            <!-- 배너: Best 6 Set -->
+            <section class="best_banner">
+                <div class="section_title">
+                    <h2>Best 6 Set</h2>
+                    <p>지금 가장 사랑받는 인기 세트</p>
+                </div>
+                <div class="slider" id="bestSlider">
+                    <div class="slider_track" id="sliderTrack"></div>
+                    <button type="button" class="slider_arrow prev" id="slidePrev" aria-label="이전 슬라이드">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                    </button>
+                    <button type="button" class="slider_arrow next" id="slideNext" aria-label="다음 슬라이드">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="slider_dots" id="sliderDots"></div>
+                </div>
+            </section>
+
+            <!-- 컨텐츠1: 가을 신상 -->
+            <section class="new_arrival">
+                <div class="section_title">
+                    <h2>Autumn New</h2>
+                    <p>가을 신상 · 마우스를 올려 착용 아이템을 확인하세요</p>
+                </div>
+                <ul class="look_list" id="lookList"></ul>
+            </section>
+
+            <!-- 컨텐츠2: 이달의 인기 상품 -->
+            <section class="popular">
+                <div class="section_title">
+                    <h2>Monthly Best</h2>
+                    <p>이달의 인기 상품</p>
+                </div>
+                <ul class="product_list" id="productList"></ul>
+            </section>
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <img src="img/logo1.png" alt="Moave" class="footer_logo">
+            <p>따뜻한 일상에 세련됨을 더하다</p>
+            <p>copyright ⓒ Moave. All rights reserved.</p>
+        </footer>
+
+        <!-- 플로팅 버튼: 맨 위로 -->
+        <button type="button" class="to_top" id="toTop" aria-label="맨 위로 이동">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
